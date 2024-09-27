@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/css/reset.css" />
+    <link rel="stylesheet" href="./style/css/home_page.css" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="contact-info">
+        <span>📧 mhhasanul@gmail.com</span>
+        <span>📞 (12345)67890</span>
+      </div>
+      <div class="user-actions">
+        <a href="#">Login 👤</a>
+        <a href="#">Wishlist ❤</a>
+        <a href="#">🛒</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="logo">
+        <h1>Hekto</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Search" />
+        <button>🔍</button>
+      </div>
+    </nav>
+    <div class="show">
+      <div>
+        <img src="./assest/home.png" alt="Home Image" />
+      </div>
+    </div>
+    <div class="products" id="products-container">
+      <h2>Featured Products</h2>
+      <div class="product-list" style="display: flex; flex-wrap: wrap; max-width: 1168px"></div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('https://dummyjson.com/products')
+          .then(response => response.json())
+          .then(data => {
+            const productsContainer = document.querySelector('.product-list')
+            data.products.forEach(product => {
+              const productDiv = document.createElement('div')
+              productDiv.style.border = '1px solid #ddd'
+              productDiv.style.borderRadius = '5px'
+              productDiv.style.margin = '10px'
+              productDiv.style.padding = '10px'
+              productDiv.style.width = '200px'
+              productDiv.innerHTML = `
+                          <img src="${product.thumbnail}" alt="${product.name}" style="width: 100%; height: auto;" />
+                          <h3>${product.title}</h3>
+                          <p>${product.description}</p>
+                          <p>Price: $${product.price}</p>
+                      `
+              productsContainer.appendChild(productDiv)
+            })
+          })
+      })
+    </script>
+  </body>
+</html>
