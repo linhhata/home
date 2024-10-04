@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/css/reset.css" />
+    <link rel="stylesheet" href="./style/css/home_page.css" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="width flex justify-between header">
+        <div class="flex">
+          <div class="flex c10 email">
+            <img src="./assest/email.png" alt="email" />
+            <a href="#">mhhasanul@gmail.com</a>
+          </div>
+          <div class="flex c10 phone">
+            <img src="./assest/phone.png" alt="phone" />
+            <span>(12345)67890</span>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="login flex">
+            <a href="#">Login</a>
+            <img src="./assest/login.png" alt="login" />
+          </div>
+          <div class="wishlist flex">
+            <a href="#">Wishlist</a>
+            <img src="./assest/wishlist.png" alt="wishlist" />
+          </div>
+          <div class="cart">
+            <img src="./assest/cart.png" alt="cart" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+      <div class="flex menu">
+        <p>Hekto</p>
+        <ul class="show-menu">
+          <li><a href="#" class="color">Home</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" class="search-input" />
+          <button class="button">
+            <img src="./assest/tk.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="banner-container centered-column banner-content">
+      <img class="alarm" src="./assest/alarm.png" alt="alarm" />
+      <div class="content-wrapper">
+        <span class="span1">Best Furniture For Your Castle....</span>
+        <span class="span2">New Furniture Collection Trends in 2020</span>
+        <span class="span3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+        </span>
+        <button class="btn">Shop Now</button>
+      </div>
+      <img class="sofa" src="./assest/sofa.png" alt="sofa" />
+    </div>
+    <section class="featured-section">
+      <h1 class="featured-title">Featured Products</h1>
+      <div class="product-container" id="product-container"></div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+
+    <script src="./style/js/home_page.js"></script>
+  </body>
+</html>
