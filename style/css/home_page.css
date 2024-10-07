@@ -89,7 +89,7 @@ a:-webkit-any-link {
 }
 
 .menu p {
-  font-family: Josefin Sans;
+  font-family: "Josefin Sans";
   font-size: 34px;
   font-weight: 700;
   line-height: 34px;
@@ -99,7 +99,7 @@ a:-webkit-any-link {
 }
 
 .show-menu {
-  font-family: Lato;
+  font-family: "Lato";
   font-size: 16px;
   line-height: 20px;
   display: flex;
@@ -154,85 +154,77 @@ a:-webkit-any-link {
   color: #fb2e86;
 }
 
-.banner-container {
-  height: 500px;
+.banner {
+  display: flex;
   background-color: #f2f0ff;
+  max-width: 1920px;
+  height: 750px;
   position: relative;
 }
-
-.alarm {
+.banner .lamp {
+  width: 387px;
+  height: 387px;
+  left: 15px;
+  gap: 0px;
+  opacity: 0px;
   position: absolute;
-  z-index: 1;
-  width: 250px;
-  height: 250px;
 }
-
-.content-wrapper {
-  width: 1168px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.banner .content {
+  width: 644px;
+  height: 248px;
+  align-items: center;
+  top: 203px;
+  left: 310px;
+  gap: 0px;
+  opacity: 0px;
+  position: absolute;
 }
-
-.span1 {
-  font-family: Lato;
+.banner .content .span-1 {
+  font-family: "Lato";
   font-size: 16px;
   font-weight: 700;
   color: #fb2e86;
-  margin-bottom: 12px;
-  margin-left: 250px;
-  margin-top: 100px;
+  margin-bottom: 100px;
 }
-
-.span2 {
-  width: 700px;
+.banner .content .span-2 {
+  width: 644px;
+  height: 140px;
   color: #000;
   font-family: "Josefin Sans";
   font-size: 53px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 132%;
   letter-spacing: 0.795px;
-  margin-bottom: 12px;
-  margin-left: 250px;
 }
-
-.span3 {
+.banner .content .span-3 {
   width: 700px;
   color: var(--sub-text-color, #8a8fb9);
   font-family: Lato;
   font-size: 16px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 175%;
+  margin-top: 12px;
+  line-height: 28px;
   margin-bottom: 27px;
-  margin-left: 250px;
 }
-
-.btn {
+.banner .sofa {
+  width: 570px;
+  height: 570px;
+  position: absolute;
+  top: 39px;
+  right: 30px;
+}
+.banner .btn-shop {
   width: 163px;
   height: 50px;
   background-color: #fb2e86;
   color: #fff;
   font-family: "Josefin Sans";
   font-size: 17px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
   letter-spacing: 0.34px;
-  border: none;
   border-radius: 2px;
-  margin-left: 250px;
-}
-
-.sofa {
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  right: 100px;
-  transform: translateY(-50%);
+  margin-top: 27px;
+  border: none;
 }
 
 .pagination {
@@ -240,12 +232,12 @@ a:-webkit-any-link {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 95px;
 }
 
 .pagination .dot {
-  width: 40px;
-  height: 8px;
+  width: 91px;
+  height: 4px;
   background-color: #ffc1e3;
   border-radius: 20px;
   cursor: pointer;
@@ -269,42 +261,288 @@ a:-webkit-any-link {
 }
 
 .product-card {
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: #f6f7fb;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  padding: 20px;
-  max-width: 260px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin-bottom: 20px;
+  width: 270px;
+  height: 361px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+.product-image {
+  width: 270px;
+  height: 236px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-info {
+  background-color: #ffffff;
+  padding: 10px;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.product-card:hover .product-info {
+  background-color: #2f1ac4;
+}
+
+.product-card:hover .product-title,
+.product-card:hover .product-code,
+.product-card:hover .product-price {
+  color: #ffffff;
 }
 
 .product-title {
-  font-size: 1.2rem;
-  color: #ff4081;
+  font-family: "Lato";
+  color: #fb2e86;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  margin: 0;
+  text-align: center;
 }
 
 .product-code {
-  color: #666;
+  color: #151875;
   margin: 10px 0;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
 }
 
 .product-price {
   font-size: 1.5rem;
-  color: #333;
+  color: #151875;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16.8px;
 }
 
 .featured-title {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans";
   font-size: 42px;
   font-weight: 700;
   line-height: 42px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
   color: #1a0b5b;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dots-container .dot {
+  width: 14px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.view-details {
+  background-color: #08d15f;
+  color: #fff;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+.product-card:hover .view-details {
+  display: block;
+  width: 94px;
+  height: 29px;
+  border-radius: 2px;
+  font-family: "Josefin Sans";
+  font-size: 12px;
+}
+
+.view-details {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.small-images {
+  display: none;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+}
+
+.small-img1 {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.small-img2 {
+  width: 17px;
+  height: 17px;
+  margin-bottom: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.small-img3 {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-card:hover .small-images {
+  display: block;
+}
+
+.container-conten {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 42px;
+  color: #151875;
+  margin-top: 60px;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 60px;
+}
+
+.offer {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  width: 270px;
+  height: 320px;
+  text-align: center;
+}
+
+.offer img {
+  width: 94px;
+  height: 94px;
+  margin-bottom: 1em;
+}
+
+.offer h2 {
+  color: #1a1a1a;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.offer p {
+  color: #6c757d;
+  font-size: 0.9em;
+}
+
+.container-2 {
+  top: 80px;
+  display: flex;
+  height: 560px;
+  background-color: #f2f0ff;
+  max-width: 1920px;
+  height: 550px;
+  position: relative;
+}
+
+.show-banner-2 {
+  display: flex;
+  background-color: #f0f0ff;
+  max-width: 1920px;
+}
+
+.sofa-2 {
+  width: 509px;
+  height: 550px;
+  margin-left: 100px;
+}
+
+.banner-2-info {
+  margin-left: 20px;
+  margin-top: 80px;
+}
+
+.banner-2-title {
+  font-size: 24px;
+  color: #2c2c6c;
+  margin-bottom: 20px;
+  display: block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 46.2px;
+}
+
+.banner-2-content {
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.12px;
+  letter-spacing: 0.015em;
+}
+
+.banner-2-content li {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+}
+
+.banner-2-content li::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ff4081;
+  margin-right: 10px;
+}
+
+.banner-2-add {
+  display: flex;
+  align-items: center;
+}
+
+.banner-2-button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+.banner-2-product-tilte {
+  font-size: 14px;
+  color: #2c2c6c;
+  display: block;
+  margin-top: 30px;
+}
+
+.banner-2-product-price {
+  font-size: 14px;
+  color: #2c2c6c;
+  display: block;
+  margin-top: 10px;
 }
