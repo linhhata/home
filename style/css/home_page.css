@@ -231,12 +231,12 @@ a:-webkit-any-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-top: 95px;
+  gap: 8px;
+  margin-top: 53px;
 }
 
 .pagination .dot {
-  width: 91px;
+  width: 24px;
   height: 4px;
   background-color: #ffc1e3;
   border-radius: 20px;
@@ -255,8 +255,8 @@ a:-webkit-any-link {
 .product-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin: 20px;
+  gap: 29px;
+  margin: 48px;
   flex-wrap: wrap;
 }
 
@@ -426,7 +426,7 @@ h1 {
 .offers {
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: 28px;
   margin-top: 60px;
 }
 
