@@ -28,11 +28,11 @@ body {
 .align-center {
   align-items: center;
 }
-
+// da sua
 .c10 {
-  gap: 20px;
+  gap:20px;
   img {
-    margin-left: 60px;
+    margin-left: 120px;
   }
 }
 
@@ -63,7 +63,7 @@ a:-webkit-any-link {
 }
 
 .email {
-  margin-right: 50px;
+  margin-right:10px;
 }
 
 .login {
@@ -90,7 +90,7 @@ a:-webkit-any-link {
   line-height: 34px;
   text-align: left;
   color: #0d0e43;
-  margin-left: 50px;
+  margin-left: 110px;
 }
 
 .show-menu {
@@ -123,7 +123,7 @@ a:-webkit-any-link {
 .search {
   display: flex;
   align-items: center;
-  margin-left: 270px;
+  margin-left: 220px;
 }
 
 .search-input {
@@ -232,7 +232,7 @@ a:-webkit-any-link {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top:95px;
+  margin-top: 95px;
 }
 
 .pagination .dot {
@@ -261,50 +261,50 @@ a:-webkit-any-link {
 }
 
 .product-card {
-  background-color: #f6f7fb; 
-  
+  background-color: #f6f7fb;
+
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  width: 270px; 
-  height: 361px; 
-  display: flex; 
-  flex-direction: column; 
+  width: 270px;
+  height: 361px;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
 .product-image {
-  width: 270px; 
-  height: 236px; 
-  border-radius: 8px; 
-  object-fit: cover; 
+  width: 270px;
+  height: 236px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .product-info {
-  background-color: #ffffff; 
-  padding: 10px; 
-  height: calc(361px - 236px); 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
+  background-color: #ffffff;
+  padding: 10px;
+  height: calc(361px - 236px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
   position: relative;
 }
 .product-card:hover .product-info {
-  background-color: #2f1ac4; 
+  background-color: #2f1ac4;
 }
 .product-card:hover .product-title,
 .product-card:hover .product-code,
 .product-card:hover .product-price {
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .product-title {
-  font-family: 'Lato'; 
-  color: #fb2e86; 
-  font-size: 18px; 
-  font-weight: 700; 
-  line-height: 21.6px; 
-  margin: 0; 
+  font-family: 'Lato';
+  color: #fb2e86;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  margin: 0;
   text-align: center;
 }
 
@@ -331,21 +331,21 @@ a:-webkit-any-link {
   font-weight: 700;
   line-height: 42px;
   text-align: center;
-  margin-top:100px;
+  margin-top: 100px;
   color: #1a0b5b;
 }
 
 .dots-container {
-  display: flex; 
-  justify-content: center; 
-  margin-top: 10px; 
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .dots-container .dot {
-  width: 14px; 
-  height: 4px; 
-  border-radius: 10px; 
-  margin: 0 5px; 
+  width: 14px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 0 5px;
 }
 
 //hover
@@ -354,13 +354,12 @@ a:-webkit-any-link {
   background-color: #08d15f;
   color: #fff;
   border: none;
-  display: none; 
+  display: none;
   cursor: pointer;
 }
 
-
 .product-card:hover .view-details {
-  display: block; 
+  display: block;
   width: 94px;
   height: 29px;
   border-radius: 2px;
@@ -369,14 +368,13 @@ a:-webkit-any-link {
 }
 .view-details {
   position: absolute;
-  bottom: 130px; 
-  left: 50%; 
-  transform: translateX(-50%); 
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
 .small-images {
-  display: none; 
+  display: none;
   position: absolute;
   top: 11px;
   left: 11px;
@@ -395,8 +393,8 @@ a:-webkit-any-link {
   object-fit: cover;
 }
 .small-img3 {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   margin-bottom: 10px;
   object-fit: cover;
 }
@@ -410,14 +408,13 @@ a:-webkit-any-link {
   text-align: center;
 }
 h1 {
-font-family: 'Josefin Sans', sans-serif;
-font-size: 42px;
-font-weight: 700;
-line-height: 42px;
-color: #151875;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 42px;
+  color: #151875;
 
-
-  margin-top:60px;
+  margin-top: 60px;
 }
 .offers {
   display: flex;
@@ -448,68 +445,91 @@ color: #151875;
   color: #6c757d;
   font-size: 0.9em;
 }
-// banner
+// banner-2
 .container-2 {
-  top:80px;
   display: flex;
+  justify-content: center; 
+  align-items: center;     
   height: 560px;
   background-color: #f2f0ff;
   max-width: 1920px;
-  height: 550px;
-  position: relative;
+  margin-top:70px;
 }
+
 .show-banner-2 {
   display: flex;
+  justify-content: center; 
+  align-items: center;     
   background-color: #f0f0ff;
   max-width: 1920px;
-  
 }
+
 .sofa-2 {
   width: 509px;
   height: 550px;
-  margin-left:100px;
-
-
+  margin-right: 50px;
 }
+
 .banner-2-info {
-  margin-left: 20px;
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
 }
+
 .banner-2-title {
-  font-size: 24px;
+  font-size: 35px;
   color: #2c2c6c;
   margin-bottom: 20px;
   display: block;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 35px;
   font-weight: 700;
-  line-height: 46.2px;
-
+  line-height: 1.5; 
+  white-space: normal; 
+  word-break: break-word;
 }
 .banner-2-content {
   list-style: none;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 21.12px;
+  line-height: 1.5; 
   letter-spacing: 0.015em;
-
+  text-align: left; 
+  width: fit-content;
 }
+
 .banner-2-content li {
   font-size: 14px;
   color: #a0a0a0;
   margin-bottom: 10px;
+  text-align: left;
+  position: relative; 
+  padding-left: 20px;
 }
+
 .banner-2-content li::before {
-  
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #ff4081;
-  margin-right: 10px;
+  content: ''; 
+  width: 8px; 
+  height: 8px; 
+  background-color: #ff4081; 
+  border-radius: 50%; 
+  position: absolute;
+  left: 0; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+.banner-2-content li:nth-child(1)::before {
+  background-color: #f52b70; 
+}
+
+.banner-2-content li:nth-child(2)::before {
+  background-color: #2b2bf5; 
+}
+
+.banner-2-content li:nth-child(3)::before {
+  background-color: #2bf5cc; 
 }
 .banner-2-add {
   display: flex;
-  align-items: center;
 }
 .banner-2-button {
   background-color: #ff4081;
@@ -533,3 +553,4 @@ color: #151875;
   display: block;
   margin-top: 10px;
 }
+  
