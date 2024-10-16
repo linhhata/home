@@ -118,6 +118,114 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchTrendingProducts(); 
 });
 
+//Discount Item
+// Hàm để viết hoa chữ cái đầu
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+async function getRandomCategories() {
+  const response = await fetch('https://dummyjson.com/products');
+  const data = await response.json();
+  const products = data.products;
+
+  const uniqueCategories = getUniqueCategories(products);
+  const randomCategories = selectRandomCategories(uniqueCategories, 3);
+  displayCategories(randomCategories, products);
+  if (randomCategories.length > 0) {
+      showRandomProduct(randomCategories[0], products); 
+  }
+}
+function getUniqueCategories(products) {
+  const categories = products.map(product => product.category);
+  return [...new Set(categories)]; 
+}
+function selectRandomCategories(categories, count) {
+  const selectedCategories = [];
+  while (selectedCategories.length < count) {
+      const randomIndex = Math.floor(Math.random() * categories.length);
+      const selectedCategory = categories[randomIndex];
+      if (!selectedCategories.includes(selectedCategory)) {
+          selectedCategories.push(selectedCategory);
+      }
+  }
+  return selectedCategories;
+}
+function displayCategories(categories, products) {
+  const container = document.getElementById('categories-container');
+  container.innerHTML = ''; 
+
+  categories.forEach((category, index) => {
+      const categoryItem = `
+      <div class="category-item ${index === 0 ? 'active' : ''}" data-category="${category}">
+          ${capitalizeFirstLetter(category)} 
+      </div>
+      `;
+      container.innerHTML += categoryItem; 
+  });
+  addCategoryClickEvent(products);
+}
+
+function addCategoryClickEvent(products) {
+  const categoryItems = document.querySelectorAll('.category-item');
+  categoryItems.forEach(item => {
+      item.addEventListener('click', function() {
+          categoryItems.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+
+          const selectedCategory = this.getAttribute('data-category');
+          showRandomProduct(selectedCategory, products);
+      });
+  });
+}
+
+function showRandomProduct(category, products) {
+  const filteredProducts = products.filter(product => product.category === category);
+  const randomProduct = filteredProducts[Math.floor(Math.random() * filteredProducts.length)];
+  document.getElementById('random-product-image').src = randomProduct.thumbnail; 
+}
+
+getRandomCategories();
+
+//Top Categories
+
+fetch('https://dummyjson.com/products')
+    .then(response => response.json())
+    .then(data => {
+        
+        const firstCategory = data.products[0].category;
+
+        
+        const filteredProducts = data.products.filter(product => product.category === firstCategory);
+
+        
+        displayProducts(filteredProducts);
+    })
+    .catch(error => console.error('Lỗi API:', error));
+
+function displayProducts(products) {
+    const productContainer = document.getElementById('product-list');
+    products.forEach(product => {
+        const productHTML = `
+        <div class="product-item">
+            <div class="product-img">
+                <img src="${product.thumbnail}" alt="${product.title}" />
+            </div>
+            <h4>${product.title}</h4>
+            <p>$${product.price.toFixed(2)}</p>
+        </div>
+        `;
+        productContainer.innerHTML += productHTML;
+    });
+}
+
+
+
+
+
 
 
 
