@@ -213,6 +213,7 @@ function displayProducts(products) {
         <div class="product-item">
             <div class="product-img">
                 <img src="${product.thumbnail}" alt="${product.title}" />
+                <div class="view-shop">View Shop</div>
             </div>
             <h4>${product.title}</h4>
             <p>$${product.price.toFixed(2)}</p>
@@ -221,6 +222,7 @@ function displayProducts(products) {
         productContainer.innerHTML += productHTML;
     });
 }
+
 
 
 

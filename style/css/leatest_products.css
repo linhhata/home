@@ -553,7 +553,7 @@
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
-  color: #B7BACB;
+  color: #b7bacb;
   margin-top: 20px;
 }
 
@@ -572,7 +572,7 @@
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
-  color: #B8B8DC;
+  color: #b8b8dc;
   margin-top: 20px;
 }
 
@@ -641,6 +641,9 @@
   width: 269px;
   height: 345px;
   position: relative;
+  text-align: center;
+  padding: 10px;
+  margin: 15px;
 }
 
 .product-img {
@@ -649,67 +652,80 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  background-color: #f6f7fb;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-img img {
-  width: 158px;
-  height: 157px;
+  width: 178px;
+  height: 178px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+.product-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-left: 7px solid #9877e7;
+  border-bottom: 4px solid #9877e7;
+  border-right: none;
+  border-top: none;
+  display: none;
+  box-sizing: border-box;
+}
+
 .product-img .view-shop {
   position: absolute;
-  bottom: 10px;
+  bottom: 21px;
   left: 50%;
-  background-color: green;
+  transform: translateX(-50%);
+  width: 94px;
+  height: 29px;
+  background-color: #08D15F;
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
   display: none;
-}
-
-h4 {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-p {
-  font-size: 14px;
-  color: #555;
-}
-
-.product-item {
-  width: 269px;
-  height: 345px;
-  text-align: center;
-  padding: 10px;
-  margin: 15px;
-  position: relative;
-}
-
-.product-img {
-  width: 269px;
-  height: 269px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  background-color: #F6F7FB;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans";
+  font-size: 12px;
+  line-height: 12px;
+  transition: opacity 0.3s ease;
 }
 
 .product-item:hover .view-shop {
+  display: flex;
+  opacity: 1;
+}
+
+.product-item:hover .product-img::after {
   display: block;
 }
 
 h4 {
-  font-size: 16px;
-  margin: 10px 0;
+  font-family: "Josefin Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #151875;
+  margin-top: 27px;
 }
 
 p {
-  font-size: 14px;
-  color: #555;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #151875;
+  margin-top: 13px;
 }
 
 .get-leatest {
