@@ -9,59 +9,59 @@
   </head>
   <body>
     <header class="header-container">
-            <div class="width flex justify-between header">
-              <div class="flex">
-                <div class="flex c10 email">
-                  <img src="./assest/email.png" alt="email" />
-                  <a href="#">mhhasanul@gmail.com</a>
-                </div>
-                <div class="flex c10 phone">
-                  <img src="./assest/phone.png" alt="phone" />
-                  <span>(12345)67890</span>
-                </div>
-              </div>
-              <div class="flex">
-                <div class="english flex">
-                    <a href="#">English</a>
-                    <img src="./assest/under.png" alt="login" />
-                  </div>
-                <div class="usd flex">
-                    <a href="#">USD</a>
-                    <img src="./assest/under.png" alt="login" />
-                  </div>
-                <div class="login flex">
-                  <a href="#">Login</a>
-                  <img src="./assest/login.png" alt="login" />
-                </div>
-                <div class="wishlist flex">
-                  <a href="#">Wishlist</a>
-                  <img src="./assest/wishlist.png" alt="wishlist" />
-                </div>
-                <div class="cart">
-                  <img src="./assest/cart.png" alt="cart" />
-                </div>
-              </div>
+      <div class="width flex justify-between header">
+        <div class="flex">
+          <div class="flex c10 email">
+            <img src="./assest/email.png" alt="email" />
+            <a href="#">mhhasanul@gmail.com</a>
+          </div>
+          <div class="flex c10 phone">
+            <img src="./assest/phone.png" alt="phone" />
+            <span>(12345)67890</span>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="english flex">
+              <a href="#">English</a>
+              <img src="./assest/under.png" alt="login" />
             </div>
-    </header>
-    <div class="menu">
-      <div class="flex menu">
-        <p>Hekto</p>
-        <ul class="show-menu">
-          <li><a href="#" class="color">Home</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="search">
-          <input type="text" class="search-input" />
-          <button class="button">
-            <img src="./assest/tk.png" />
-          </button>
+          <div class="usd flex">
+              <a href="#">USD</a>
+              <img src="./assest/under.png" alt="login" />
+            </div>
+          <div class="login flex">
+            <a href="#">Login</a>
+            <img src="./assest/login.png" alt="login" />
+          </div>
+          <div class="wishlist flex">
+            <a href="#">Wishlist</a>
+            <img src="./assest/wishlist.png" alt="wishlist" />
+          </div>
+          <div class="cart">
+            <img src="./assest/cart.png" alt="cart" />
+          </div>
         </div>
       </div>
-    </div>
+</header>
+<div class="menu">
+<div class="flex menu">
+  <p>Hekto</p>
+  <ul class="show-menu">
+    <li><a href="#" class="color">Home</a></li>
+    <li><a href="#">Pages</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="search">
+    <input type="text" class="search-input" />
+    <button class="button">
+      <img src="./assest/tk.png" />
+    </button>
+  </div>
+</div>
+</div>
     <div class="shop-grid">
       <div class="default">
         <p>Shop Grid Default</p>
@@ -72,33 +72,96 @@
         <p class="color">Shop Grid Default</p>
       </div>
     </div>
-    <div class="container">
-      <div class="header">
-          <h1>Ecommerce Accesories & Fashion item</h1>
+    <div class="shop-container"> 
+      <div class="shop-header">
+        <div class="shop-title">
+          <h1>Ecommerce Accessories & Fashion item</h1>
           <p>About 9,620 results (0.62 seconds)</p>
-      </div>
-      <div class="filters">
-          <div class="per-page">
-              <label for="perPage">Per Page:</label>
-              <input type="text" id="perPage" name="perPage">
+        </div>
+        <div class="shop-filters">
+          <div class="items-per-page">
+            <label for="itemsPerPage">Items Per Page:</label>
+            <input type="text" id="itemsPerPage" name="itemsPerPage">
           </div>
-          <div class="sort-by">
-              <label for="sortBy">Sort By:</label>
-              <select id="sortBy" name="sortBy">
-                  <option value="best-match">Best Match</option>
-              </select>
+          <div class="items-sort-by">
+            <label for="sortOptions">Sort By:</label>
+            <select id="sortOptions" name="sortOptions">
+              <option value="best-match">Best Match</option>
+            </select>
           </div>
           <div class="view-options">
-              <label for="view">View:</label>
-              <button class="grid-view"></button>
-              <button class="list-view"></button>
+            <label for="viewOptions">View:</label>
+            <button class="grid-view"></button>
+            <button class="list-view"></button>
           </div>
-          <div class="search-box">
-              <input type="text" placeholder="Search...">
+          <div class="search-bar">
+            <input type="text" id="searchQuery" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="product-list" class="product-grid"></div>
+    <div id="pagination" class="pagination"></div>
+
+    <div class="five-img">
+      <img src="./assest/banner2.png">
+    </div>
+
+    <footer class="footer">
+      <div class="footer-section">
+          <div class="footer-contact">
+              <span class="footer-title">Hekto</span>
+              <div class="footer-input">
+                  <input type="text" class="footer-email-input" placeholder="Enter Email Address">
+                  <button class="footer-signup-btn">Sign Up</button>
+              </div>
+              <span class="footer-info">
+                  Contact Info
+                  <br>17 Princess Road, London, Greater London NW1 8JR, UK</br>
+              </span>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Categories</span>
+              <p class="footer-menu-item">Laptops & Computers</p>
+              <p class="footer-menu-item">Cameras & Photography</p>
+              <p class="footer-menu-item">Smart Phones & Tablets</p>
+              <p class="footer-menu-item">Video Games & Consoles</p>
+              <p class="footer-menu-item">Waterproof Headphones</p>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Customer Care</span>
+              <p class="footer-menu-item">My Account</p>
+              <p class="footer-menu-item">Discount</p>
+              <p class="footer-menu-item">Returns</p>
+              <p class="footer-menu-item">Orders History</p>
+              <p class="footer-menu-item">Order Tracking</p>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Pages</span>
+              <p class="footer-menu-item">Blog</p>
+              <p class="footer-menu-item">Browse the Shop</p>
+              <p class="footer-menu-item">Category</p>
+              <p class="footer-menu-item">Pre-Built Pages</p>
+              <p class="footer-menu-item">Visual Composer Elements</p>
+              <p class="footer-menu-item">WooCommerce Pages</p>
           </div>
       </div>
-  </div>
+      <div class="footer-bottom">
+          <span class="footer-address">©Webecy - All Rights Reserved</span>
+          <div class="footer-social">
+              <img class="social-icon" src="./assest/facebook.png" alt="Facebook">
+              <img class="social-icon" src="./assest/instagram.png" alt="Instagram">
+              <img class="social-icon" src="./assest/twitter.png" alt="Twitter">
+          </div>
+      </div>
+    </footer>
+    
 
-  
+
+
+  <script src="./style/js/grid_default.js">
+
+  </script>
+
   </body>
 </html>
