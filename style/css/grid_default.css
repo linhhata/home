@@ -415,34 +415,206 @@ select#sortOptions {
 }
 
 .product-list {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  max-width: 1240px;
+  margin: 0 auto;
+  margin-top: 94px;
+}
+
+#product-list.product-list .product-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 0px 25px 5px rgba(246, 246, 253, 0.5019607843);
+  margin-bottom: 20px;
+  height: 254px;
+  margin-top: 90px;
+}
+
+.product-list .image-container {
+  margin-right: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 338px;
+  height: 217px;
+}
+
+.product-list .image-container img {
+  width: 338px;
+  height: 217px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: auto;
+  height: 100%;
+}
+
+.product-list .info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  margin-top: 17px;
+}
+
+.product-list .info-container h3 {
+  font-family: "Josefin Sans";
+  font-size: 19.88px;
+  font-weight: 700;
+  line-height: 19.88px;
+  text-align: left;
+  color: #151875;
+}
+
+.product-list .price-container {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.product-list .original-price {
+  font-family: "Josefin Sans";
+  color: #FF2AAA !important;
+  font-size: 15.46px;
+  font-weight: 400;
+  line-height: 15.46px;
+  text-align: left;
+  text-decoration: line-through;
+}
+
+.product-list .discounted-price {
+  font-family: "Josefin Sans";
+  color: #111C85 !important;
+  font-size: 15.46px;
+  font-weight: 400;
+  line-height: 15.46px;
+  text-align: left;
+}
+
+.product-list .info-container p {
+  font-family: "Lato";
+  font-size: 17.67px;
+  font-weight: 400;
+  line-height: 30.92px;
+  text-align: left;
+  color: #9295aa;
+  margin-top: 11px;
+}
+
+.product-list .color-options span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.product-list .color-1 {
+  background-color: #7e33e0;
+}
+
+.product-list .color-2 {
+  background-color: red;
+}
+
+.product-list .color-3 {
+  background-color: orange;
+}
+
+.product-list .title-and-colors {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.product-list .color-options {
+  display: flex;
+  margin-left: 490px;
+  position: absolute;
+  top: 10px;
+}
+
+.product-list .price-rating-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.product-list .price-container {
+  margin-right: 20px;
+}
+
+.star {
+  font-size: 16px;
+  color: gold;
+}
+
+.full-star {
+  color: gold;
+}
+
+.half-star {
+  color: gold;
+}
+
+.empty-star {
+  color: lightgray;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+}
+
+.discounted-price {
+  margin-right: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.small-img1 {
+  width: 23px !important;
+  height: 21px !important;
+}
+
+.small-img2 {
+  width: 17px !important;
+  height: 15px !important;
+}
+
+.small-img3 {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.small-images-container {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .product-list .product-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.product-list .image-container {
-  width: 150px;
-  height: 150px;
-}
-
-.product-list .product-card h3 {
-  flex: 1;
-  margin-left: 20px;
-}
-
-.product-list .price-container {
-  flex: 0 0 100px;
-  text-align: right;
-}
-
-.product-list .color-options {
-  display: none;
+  box-shadow: 0px 0px 25px 5px rgba(246, 246, 253, 0.5019607843);
+  margin-bottom: 20px;
+  height: 254px;
+  margin-top: 90px;
 }
 
 .five-img {
