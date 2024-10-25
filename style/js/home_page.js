@@ -1,30 +1,27 @@
-//AP2
 document.addEventListener('DOMContentLoaded', () => {
-  let currentPage = 0
-  const limit = 4 // Số sản phẩm trên mỗi trang
-  const totalDots = 3 // Tổng số hình chữ nhật
+  let currentPage = 0;
+  const limit = 4; // Số sản phẩm trên mỗi trang
+  const totalDots = 3; // Tổng số hình chữ nhật
 
-  const productContainer = document.getElementById('product-container')
-  const paginationContainer = document.getElementById('pagination')
+  const productContainer = document.getElementById('product-container');
+  const paginationContainer = document.getElementById('pagination');
 
   function fetchProducts(page) {
-    const skip = page * limit
+    const skip = page * limit;
 
     fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
       .then(response => response.json())
       .then(data => {
-        productContainer.innerHTML = ''
-        const products = data.products
+        productContainer.innerHTML = '';
+        const products = data.products;
 
         products.forEach(product => {
-          const productCard = document.createElement('div')
-          productCard.classList.add('product-card')
+          const productCard = document.createElement('div');
+          productCard.classList.add('product-card');
 
           productCard.innerHTML = `
                     <div class="product-image">
-                        <img src="${product.thumbnail}" alt="${
-            product.title
-          }" style="width: 100%; height: 100%; border-radius: 8px;">
+                        <img src="${product.thumbnail}" alt="${product.title}" style="width: 100%; height: 100%; border-radius: 8px;">
                     </div>
                     <div class="small-images">
                         <img src="./assest/hang.png" alt="Image 1" class="small-img1">
@@ -42,37 +39,41 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="product-price">$${product.price.toFixed(2)}</p>
                         <button class="view-details">View Details</button> 
                     </div>
-                `
+                `;
 
-          productContainer.appendChild(productCard)
-        })
+          // Thêm sự kiện click cho nút View Details
+          productCard.querySelector('.view-details').addEventListener('click', () => {
+            window.location.href = `product-details.html?id=${product.id}`;
+          });
 
-        updatePagination(page)
+          productContainer.appendChild(productCard);
+        });
+
+        updatePagination(page);
       })
       .catch(error => {
-        console.error('Error fetching the products:', error)
-      })
+        console.error('Error fetching the products:', error);
+      });
   }
 
   function updatePagination(page) {
-    paginationContainer.innerHTML = ''
+    paginationContainer.innerHTML = '';
 
     for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement('div')
-      dot.classList.add('dot')
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
       if (i === page % totalDots) {
-        dot.classList.add('active')
+        dot.classList.add('active');
       }
 
       dot.addEventListener('click', () => {
-        currentPage = i
-        fetchProducts(currentPage)
-      })
+        currentPage = i;
+        fetchProducts(currentPage);
+      });
 
-      paginationContainer.appendChild(dot)
+      paginationContainer.appendChild(dot);
     }
   }
-  /////////
 
-  fetchProducts(currentPage)
-})
+  fetchProducts(currentPage);
+});

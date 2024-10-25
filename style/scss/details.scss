@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+// da sua
+.c10 {
+  gap:10px;
+  img {
+    margin-left: 108px;
+  }
+}
+
+.width {
+  max-width: 1168px;
+  margin: auto;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+a:-webkit-any-link {
+  color: white;
+}
+
+.header-container {
+  background-color: #7e33e0;
+}
+
+.header {
+  height: 44px;
+  color: #f1f1f1;
+  font-family: 'Josefin Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+// .email {
+//   margin-right:10px;
+// }
+
+.login {
+  margin-right: 16px;
+}
+
+.wishlist {
+  margin-right: 26px;
+}
+.english{
+    margin-right: 26px;
+}
+.usd{
+    margin-right: 16px;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+    background-color: white;
+    font-family: Lato;
+  }
+  
+  .menu p {
+    font-family: 'Josefin Sans';
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+    color: #0d0e43;
+    margin-left: 110px;
+  }
+  
+  .show-menu {
+    font-family: 'Lato';
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 50px;
+  }
+  
+  .show-menu li {
+    display: inline;
+  }
+  
+  .show-menu a {
+    text-decoration: none;
+    color: #1e1d4c;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 20px;
+  }
+  
+  .show-menu .color {
+    color: #fb2e86;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    margin-left:180px;
+  }
+  
+  .search-input {
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+  
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .button {
+    background-color: #ff2d83;
+    border: 1px solid #ff2d83;
+    cursor: pointer;
+  }
+  
+  .button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .show-menu a:hover {
+    color: #fb2e86;
+  }
+  .shop-grid {
+    max-width: 1920px;
+    height: 286px;
+    padding: 50px;
+    background-color: #f5f6ff;
+    margin-top: 25px;
+    position: relative;
+  }
+  
+  .default p {
+    font-family: 'Josefin Sans';
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-top:70px;
+    margin-left:240px;
+    color: #101750;
+  }
+  
+  .flex-menu {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 235px;
+  }
+
+  .flex-menu p {
+    margin: 0 5px;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color:#000000;
+  }
+  
+  .flex-menu p.color {
+    color: #fb2e86;
+    cursor: pointer;
+  }
+  // API
+  .product-details {
+    display: flex;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.product-detail-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-detail-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    background-color: #ff0050;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #e60046;
+}
