@@ -1,7 +1,5 @@
-
-//API
-const apiUrl = 'https://dummyjson.com/products';
-const productsPerPage = 12; 
+const apiUrl = 'https://dummyjson.com/products?limit=194';
+const productsPerPage = 48; 
 let currentPage = 1; 
 let allProducts = []; 
 let isGridView = true; 
@@ -201,6 +199,3 @@ listViewButton.addEventListener('click', () => {
     displayProducts(allProducts, currentPage); 
 });
 window.onload = fetchAllProducts;
-
-
-
