@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 0;
   const limit = 4; // Số sản phẩm trên mỗi trang
@@ -20,30 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
           productCard.classList.add('product-card');
 
           productCard.innerHTML = `
-                    <div class="product-image">
-                        <img src="${product.thumbnail}" alt="${product.title}" style="width: 100%; height: 100%; border-radius: 8px;">
-                    </div>
-                    <div class="small-images">
-                        <img src="./assest/hang.png" alt="Image 1" class="small-img1">
-                        <img src="./assest/love.png" alt="Image 2" class="small-img2">
-                        <img src="./assest/plus.png" alt="Image 3" class="small-img3">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">${product.title}</h3>
-                        <div class="dots-container">
-                            <div class="dot" style="background-color: #05E6B7;"></div>
-                            <div class="dot" style="background-color: #F701A8;"></div>
-                            <div class="dot" style="background-color: #00009D;"></div>
-                        </div>
-                        <p class="product-code">Code - ${product.sku}</p>
-                        <p class="product-price">$${product.price.toFixed(2)}</p>
-                        <button class="view-details">View Details</button> 
-                    </div>
-                `;
+            <div class="product-image">
+                <img src="${product.thumbnail}" alt="${product.title}" style="width: 100%; height: 100%; border-radius: 8px;">
+            </div>
+            <div class="small-images">
+                <img src="./assest/hang.png" alt="Image 1" class="small-img1">
+                <img src="./assest/love.png" alt="Image 2" class="small-img2">
+                <img src="./assest/plus.png" alt="Image 3" class="small-img3">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">${product.title}</h3>
+                <div class="dots-container">
+                    <div class="dot" style="background-color: #05E6B7;"></div>
+                    <div class="dot" style="background-color: #F701A8;"></div>
+                    <div class="dot" style="background-color: #00009D;"></div>
+                </div>
+                <p class="product-code">Code - ${product.sku}</p>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <button class="view-details">View Details</button>
+            </div>
+          `;
 
           // Thêm sự kiện click cho nút View Details
           productCard.querySelector('.view-details').addEventListener('click', () => {
-            window.location.href = `product-details.html?id=${product.id}`;
+            window.location.href = `details.html?id=${product.id}`;
           });
 
           productContainer.appendChild(productCard);
@@ -74,6 +75,5 @@ document.addEventListener('DOMContentLoaded', () => {
       paginationContainer.appendChild(dot);
     }
   }
-
   fetchProducts(currentPage);
 });

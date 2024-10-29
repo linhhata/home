@@ -1,89 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/css/reset.css" />
-    <link rel="stylesheet" href="./style/css/details.css" >
+    <link rel="stylesheet" href="./style/css/details.css" />
     <title>Details</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header-container">
-        <div class="width flex justify-between header">
-          <div class="flex">
-            <div class="flex c10 email">
-              <img src="./assest/email.png" alt="email" />
-              <a href="#">mhhasanul@gmail.com</a>
-            </div>
-            <div class="flex c10 phone">
-              <img src="./assest/phone.png" alt="phone" />
-              <span>(12345)67890</span>
-            </div>
+      <div class="width flex justify-between header">
+        <div class="flex">
+          <div class="flex c10 email">
+            <img src="./assest/email.png" alt="email" />
+            <a href="#">mhhasanul@gmail.com</a>
           </div>
-          <div class="flex">
-            <div class="english flex">
-                <a href="#">English</a>
-                <img src="./assest/under.png" alt="login" />
-              </div>
-            <div class="usd flex">
-                <a href="#">USD</a>
-                <img src="./assest/under.png" alt="login" />
-              </div>
-            <div class="login flex">
-              <a href="#">Login</a>
-              <img src="./assest/login.png" alt="login" />
-            </div>
-            <div class="wishlist flex">
-              <a href="#">Wishlist</a>
-              <img src="./assest/wishlist.png" alt="wishlist" />
-            </div>
-            <div class="cart">
-              <img src="./assest/cart.png" alt="cart" />
-            </div>
+          <div class="flex c10 phone">
+            <img src="./assest/phone.png" alt="phone" />
+            <span>(12345)67890</span>
           </div>
         </div>
-  </header>
-  <div class="menu">
-  <div class="flex menu">
-    <p>Hekto</p>
-    <ul class="show-menu">
-      <li><a href="#" class="color">Home</a></li>
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="search">
-      <input type="text" class="search-input" />
-      <button class="button">
-        <img src="./assest/tk.png" />
-      </button>
+        <div class="flex">
+          <div class="english flex">
+            <a href="#">English</a>
+            <img src="./assest/under.png" alt="login" />
+          </div>
+          <div class="usd flex">
+            <a href="#">USD</a>
+            <img src="./assest/under.png" alt="login" />
+          </div>
+          <div class="login flex">
+            <a href="#">Login</a>
+            <img src="./assest/login.png" alt="login" />
+          </div>
+          <div class="wishlist flex">
+            <a href="#">Wishlist</a>
+            <img src="./assest/wishlist.png" alt="wishlist" />
+          </div>
+          <div class="cart">
+            <img src="./assest/cart.png" alt="cart" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+      <div class="flex menu">
+        <p>Hekto</p>
+        <ul class="show-menu">
+          <li><a href="#" class="color">Home</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" class="search-input" />
+          <button class="button">
+            <img src="./assest/tk.png" />
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-  <div class="shop-grid">
-    <div class="default">
-      <p>Product Details</p>
+    <div class="shop-grid">
+      <div class="default">
+        <p>Product Details</p>
+      </div>
+      <div class="flex-menu">
+        <p>Home .</p>
+        <p>Pages .</p>
+        <p class="color">Product Details</p>
+      </div>
     </div>
-    <div class="flex-menu">
-      <p>Home . </p>
-      <p>Pages . </p>
-      <p class="color">Product Details</p>
+
+    <div id="product-detail-general-info">
+      <div class="product-detail-image">
+        <div class="product-img-left"></div>
+       
+        <div class="product-img-right"></div>
+       
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-detail-name"></h1>
+       
+        <div class="product-rating"></div>
+       
+        <span class="num-of-review"></span>
+        
+        <div class="price-info">
+          <span class="product-price-sale"></span>
+        
+          <span class="product-price"></span>
+          
+        </div>
+        <p class="des-details"></p>
+       
+        <button id="add-cart-btn" class="add-to-cart-btn">Add To Cart</button>
+        <div class="product-categories">
+          <span>Danh mục: </span>
+          <span class="product-categories-name"></span>
+        </div>
+
+        <div class="product-tags">
+          <span>Tags: </span>
+          <span class="product-tags-name"></span>
+         
+        </div>
+        <div class="share-section">
+          <span class="share-text">Share</span>
+          <div class="share-icons">
+            <img src="./assest/facebook.png" alt="Icon 1" class="share-icon">
+            <img src="./assest/instagram.png" alt="Icon 2" class="share-icon">
+            <img src="./assest/twitter.png" alt="Icon 3" class="share-icon">
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="wrapper">
+      <div class="container">
+          <ul class="tabs">
+              <li><a href="#">Description</a></li>
+              <li><a href="#">Additional Info</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Video</a></li>
+          </ul>
+
+          <div class="content">
+              <h2>Varius tempor.</h2>
+              <p>Aliquam dis vulputate vulputate integer sagittis. Faucibus dolor ornare faucibus vel sed et eleifend habitasse amet. Montes, mauris varius ac est bibendum. Scelerisque a, risus ac ante. Velit consectetur neque, elit, aliquet. Non varius proin sed urna, egestas consequat laoreet diam tincidunt. Magna eget faucibus cras justo, tortor sed donec tempus. Imperdiet consequat, quis diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viver.</p>
+              <h3>More details</h3>
+              <ul class="details">
+                  <li><span>&#8594;</span> Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</li>
+                  <li><span>&#8594;</span> Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</li>
+                  <li><span>&#8594;</span> Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</li>
+                  <li><span>&#8594;</span> Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</li>
+              </ul>
+          </div>
+      </div>
   </div>
-  
-  <div id="product-details-container">
+  <!-- <p>Related Products</p>
+    <div id="product-list">
+    </div> -->
+    <div class="trending-products">
+      <p>Trending Products</p>
+      <div id="container-trending"></div>
+    </div>
+
+    <div class="five-img">
+      <img src="./assest/banner2.png">
+    </div>
+    <footer class="footer">
+      <div class="footer-section">
+          <div class="footer-contact">
+              <span class="footer-title">Hekto</span>
+              <div class="footer-input">
+                  <input type="text" class="footer-email-input" placeholder="Enter Email Address">
+                  <button class="footer-signup-btn">Sign Up</button>
+              </div>
+              <span class="footer-info">
+                  Contact Info
+                  <br>17 Princess Road, London, Greater London NW1 8JR, UK</br>
+              </span>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Categories</span>
+              <p class="footer-menu-item">Laptops & Computers</p>
+              <p class="footer-menu-item">Cameras & Photography</p>
+              <p class="footer-menu-item">Smart Phones & Tablets</p>
+              <p class="footer-menu-item">Video Games & Consoles</p>
+              <p class="footer-menu-item">Waterproof Headphones</p>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Customer Care</span>
+              <p class="footer-menu-item">My Account</p>
+              <p class="footer-menu-item">Discount</p>
+              <p class="footer-menu-item">Returns</p>
+              <p class="footer-menu-item">Orders History</p>
+              <p class="footer-menu-item">Order Tracking</p>
+          </div>
+          <div class="footer-column">
+              <span class="footer-menu-title">Pages</span>
+              <p class="footer-menu-item">Blog</p>
+              <p class="footer-menu-item">Browse the Shop</p>
+              <p class="footer-menu-item">Category</p>
+              <p class="footer-menu-item">Pre-Built Pages</p>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <span class="footer-address">©Webecy - All Rights Reserved</span>
+          <div class="footer-social">
+              <img class="social-icon" src="./assest/facebook.png" alt="Facebook">
+              <img class="social-icon" src="./assest/instagram.png" alt="Instagram">
+              <img class="social-icon" src="./assest/twitter.png" alt="Twitter">
+          </div>
+      </div>
+    </footer>
+
+    <script src="./style/js/product_details.js">
+    </script>
+    <script src="./style/js/list.js">
+
+    </script>
     
-  </div>
 
-
-  
-
-  
-
-<script src="./style/js/product-details.js">
-
-</script>
-</body>
+  </body>
 </html>
