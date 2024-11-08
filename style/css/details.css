@@ -204,10 +204,10 @@ a:-webkit-any-link {
   gap: 41px;
   padding: 20px;
   max-width: 1170px;
-  height: 509px;
+  height: auto;
   margin: 0 auto;
   background-color: white;
-  box-shadow: 0px 0px 25px 10px #F6F4FD;
+  box-shadow: 0px 0px 25px 10px #f6f4fd;
   margin-top: 121px;
   box-sizing: border-box;
 }
@@ -230,7 +230,7 @@ a:-webkit-any-link {
      object-fit: cover;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
 }
 
 .product-img-right img {
@@ -310,7 +310,7 @@ a:-webkit-any-link {
   font-size: 16px;
   font-weight: 400;
   color: white;
-  background-color: #FB2E86;
+  background-color: #fb2e86;
   width: 134px;
   height: 39px;
   border: none;
@@ -454,19 +454,13 @@ h3 {
   color: #2020f2;
 }
 
-p {
+h1 {
   font-family: "Josefin Sans";
   font-size: 36px;
   font-weight: 700;
   line-height: 36px;
   text-align: center;
   margin-top: 20px;
-}
-
-#product-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .product {
@@ -485,27 +479,6 @@ p {
   border-radius: 10px;
 }
 
-.product h2 {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-.product p {
-  font-size: 1em;
-  color: #555;
-}
-
-.product .price {
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #333;
-}
-
-.product .stars {
-  color: gold;
-  margin: 5px 0;
-}
-
 #container-trending {
   display: flex;
   gap: 29px;
@@ -516,16 +489,14 @@ p {
 }
 
 .trending-product-card {
-  position: relative;
   padding: 10px;
   width: 270px;
   height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  position: relative;
 }
 
 .trending-product-image-container {
@@ -536,7 +507,6 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #f5f6f8;
-  position: relative;
 }
 
 .trending-product-image {
@@ -544,18 +514,24 @@ p {
   height: 171px;
 }
 
+.trending-product-title-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .trending-product-title {
   font-family: "Lato";
   font-size: 16px;
   font-weight: 700;
-  text-align: center;
   color: #151875;
 }
 
-.trending-product-price-discount {
-  display: flex;
-  justify-content: center;
-  margin: 5px 0;
+.trending-product-rating .trending-product-stars {
+  color: gold;
+  font-size: 14px;
 }
 
 .trending-product-price {
@@ -565,17 +541,7 @@ p {
   line-height: 14px;
   text-align: center;
   color: #151875;
-}
-
-.trending-product-discount {
-  font-family: "Josefin Sans";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  text-align: center;
-  color: rgba(21, 24, 117, 0.3019607843);
-  text-decoration: line-through;
-  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .five-img {

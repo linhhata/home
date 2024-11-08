@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/reset.css" />
+    <link rel="stylesheet" href="./style/css/shopping_curt.css" />
+    <title>Shopping Curt</title>
+</head>
+<body>
+    <header class="header-container">
+        <div class="width flex justify-between header">
+          <div class="flex">
+            <div class="flex c10 email">
+              <img src="./assest/email.png" alt="email" />
+              <a href="#">mhhasanul@gmail.com</a>
+            </div>
+            <div class="flex c10 phone">
+              <img src="./assest/phone.png" alt="phone" />
+              <span>(12345)67890</span>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="english flex">
+              <a href="#">English</a>
+              <img src="./assest/under.png" alt="login" />
+            </div>
+            <div class="usd flex">
+              <a href="#">USD</a>
+              <img src="./assest/under.png" alt="login" />
+            </div>
+            <div class="login flex">
+              <a href="#">Login</a>
+              <img src="./assest/login.png" alt="login" />
+            </div>
+            <div class="wishlist flex">
+              <a href="#">Wishlist</a>
+              <img src="./assest/wishlist.png" alt="wishlist" />
+            </div>
+            <div class="cart">
+              <img src="./assest/cart.png" alt="cart" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="menu">
+        <div class="flex menu">
+          <p>Hekto</p>
+          <ul class="show-menu">
+            <li><a href="#" class="color">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="search">
+            <input type="text" class="search-input" />
+            <button class="button">
+              <img src="./assest/tk.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid">
+        <div class="default">
+          <p>Shopping Curt</p>
+        </div>
+        <div class="flex-menu">
+          <p>Home .</p>
+          <p>Pages .</p>
+          <p class="color">Shopping Curt</p>
+        </div>
+      </div>
+
+      <main>
+        <section class="cart-items-section">
+            <table id="cart-items-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr class="cart-item">
+                        <td>Sample Product</td>
+                        <td>$20.00</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="quantity-button decrement">−</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="quantity-button increment">+</button>
+                            </div>
+                        </td>
+                        <td>$20.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="clear-cart" class="clear-cart-button">Clear Cart</button>
+        </section>
+        
+        <section class="cart-summary">
+            <h2>Cart Totals</h2>
+            <div class="totals">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>Total: <span id="total">$0.00</span></p>
+                <button id="checkout" class="checkout-button">Proceed To Checkout</button>
+            </div>
+        </section>
+    </main>
+    
+    
+  
+<script src="./style/js/shopping_curt.js">
+</script>
+</body>
+</html>

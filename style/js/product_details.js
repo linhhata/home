@@ -103,7 +103,6 @@ async function showRelatedProducts(data) {
         console.error("Lỗi khi tải sản phẩm liên quan:", error);
     }
 }
-
 async function showProductDetailsPage() {
     const data = await getProductData();
     if (data) {
@@ -118,15 +117,15 @@ async function showProductDetailsPage() {
         });
     }
 }
-
-
 document.addEventListener('DOMContentLoaded', showProductDetailsPage);
 
 //Related Products
 const fetchTrendingProducts = async () => {
     try {
-        const response = await fetch('https://dummyjson.com/products');
+        const response = await fetch('https://dummyjson.com/products/category/Smartphones');
         const data = await response.json();
+
+        // Lấy 4 sản phẩm đầu tiên từ danh mục "Mens-shoes"
         const products = data.products.slice(0, 4);
         const trendingProductContainer = document.getElementById('container-trending');
         trendingProductContainer.innerHTML = '';
@@ -137,13 +136,14 @@ const fetchTrendingProducts = async () => {
             trendingProductCard.innerHTML = `
                 <div class="trending-product-image-container">
                     <img src="${item.thumbnail}" alt="${item.title}" class="trending-product-image">
-                    <!-- Xóa phần tử thumbnail-images và button view now -->
                 </div>
-                <h3 class="trending-product-title">${item.title}</h3>
-                <div class="trending-product-price-discount">
-                    <p class="trending-product-price">$${item.price}</p> 
-                    <p class="trending-product-discount">$${item.discountPercentage}</p> 
+                <div class="trending-product-title-rating">
+                    <h3 class="trending-product-title">${item.title}</h3>
+                    <div class="trending-product-rating">
+                      
+                    </div>
                 </div>
+                <p class="trending-product-price">$${item.price}</p> 
             `;
 
             trendingProductContainer.appendChild(trendingProductCard);
@@ -156,6 +156,9 @@ const fetchTrendingProducts = async () => {
 document.addEventListener('DOMContentLoaded', () => {
     fetchTrendingProducts(); 
 });
+
+
+
 
 
 

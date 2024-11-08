@@ -32,7 +32,7 @@ body {
 }
 // da sua
 .c10 {
-  gap:10px;
+  gap: 10px;
   img {
     margin-left: 108px;
   }
@@ -75,150 +75,147 @@ a:-webkit-any-link {
 .wishlist {
   margin-right: 26px;
 }
-.english{
-    margin-right: 26px;
+.english {
+  margin-right: 26px;
 }
-.usd{
-    margin-right: 16px;
+.usd {
+  margin-right: 16px;
 }
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 90px;
-    background-color: white;
-    font-family: Lato;
-  }
-  
-  .menu p {
-    font-family: 'Josefin Sans';
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 34px;
-    text-align: left;
-    color: #0d0e43;
-    margin-left: 110px;
-  }
-  
-  .show-menu {
-    font-family: 'Lato';
-    font-size: 16px;
-    line-height: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    margin-left: 50px;
-  }
-  
-  .show-menu li {
-    display: inline;
-  }
-  
-  .show-menu a {
-    text-decoration: none;
-    color: #1e1d4c;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 0 20px;
-  }
-  
-  .show-menu .color {
-    color: #fb2e86;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-    margin-left:180px;
-  }
-  
-  .search-input {
-    padding: 5px;
-    border: 1px solid #e0e0e0;
-    border-right: none;
-  
-    outline: none;
-    font-size: 14px;
-  }
-  
-  .button {
-    background-color: #ff2d83;
-    border: 1px solid #ff2d83;
-    cursor: pointer;
-  }
-  
-  .button img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .show-menu a:hover {
-    color: #fb2e86;
-  }
-  .shop-grid {
-    max-width: 1920px;
-    height: 286px;
-    padding: 50px;
-    background-color: #f5f6ff;
-    margin-top: 25px;
-    position: relative;
-  }
-  
-  .default p {
-    font-family: 'Josefin Sans';
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 36px;
-    margin-top:70px;
-    margin-left:240px;
-    color: #101750;
-  }
-  
-  .flex-menu {
-    display: flex;
-    margin-top: 10px;
-    margin-left: 235px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 90px;
+  background-color: white;
+  font-family: Lato;
+}
 
-  .flex-menu p {
-    margin: 0 5px;
-    font-family: 'Lato';
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.2px;
-    color:#000000;
-  }
-  
-  .flex-menu p.color {
-    color: #fb2e86;
-    cursor: pointer;
-  }
-  // API
+.menu p {
+  font-family: 'Josefin Sans';
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: left;
+  color: #0d0e43;
+  margin-left: 110px;
+}
+
+.show-menu {
+  font-family: 'Lato';
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 50px;
+}
+
+.show-menu li {
+  display: inline;
+}
+
+.show-menu a {
+  text-decoration: none;
+  color: #1e1d4c;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 20px;
+}
+
+.show-menu .color {
+  color: #fb2e86;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-left: 180px;
+}
+
+.search-input {
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-right: none;
+
+  outline: none;
+  font-size: 14px;
+}
+
+.button {
+  background-color: #ff2d83;
+  border: 1px solid #ff2d83;
+  cursor: pointer;
+}
+
+.button img {
+  width: 20px;
+  height: 20px;
+}
+
+.show-menu a:hover {
+  color: #fb2e86;
+}
+.shop-grid {
+  max-width: 1920px;
+  height: 286px;
+  padding: 50px;
+  background-color: #f5f6ff;
+  margin-top: 25px;
+  position: relative;
+}
+
+.default p {
+  font-family: 'Josefin Sans';
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-top: 70px;
+  margin-left: 240px;
+  color: #101750;
+}
+
+.flex-menu {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 235px;
+}
+
+.flex-menu p {
+  margin: 0 5px;
+  font-family: 'Lato';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #000000;
+}
+
+.flex-menu p.color {
+  color: #fb2e86;
+  cursor: pointer;
+}
+// API
 #product-detail-general-info {
   display: flex;
-  gap:41px;
+  gap: 41px;
   padding: 20px;
   max-width: 1170px;
-  height: 509px;
+  height: auto;
   margin: 0 auto;
-  background-color:#ffff; 
-  box-shadow: 0px 0px 25px 10px #F6F4FD;
+  background-color: #ffff;
+  box-shadow: 0px 0px 25px 10px #f6f4fd;
   margin-top: 121px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .product-detail-image {
   display: flex;
-  gap:21px;
-  
-  
+  gap: 21px;
 }
 
 .product-img-left {
   display: flex;
   flex-direction: column;
   gap: 11px;
-  
 }
 
 .product-img-left img {
@@ -227,7 +224,7 @@ a:-webkit-any-link {
   object-fit: cover;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
 }
 
 .product-img-right img {
@@ -235,15 +232,13 @@ a:-webkit-any-link {
   height: 479px;
   object-fit: cover;
   border-radius: 3px;
-  justify-content: center; 
+  justify-content: center;
   background-color: #c4c4c4;
-  
 }
 
 .product-info {
   max-width: 600px;
 }
-
 
 .product-detail-name {
   font-family: 'Josefin Sans';
@@ -254,22 +249,20 @@ a:-webkit-any-link {
   color: #0d134e;
 }
 
-.product-rating-container {         
-  align-items: center;  
-  margin-top: 14px;  
-
+.product-rating-container {
+  align-items: center;
+  margin-top: 14px;
 }
 
 .product-rating {
-  margin-right: 5px; 
-  color: #ffc416; 
+  margin-right: 5px;
+  color: #ffc416;
 }
-.num-of-review{
+.num-of-review {
   color: #151875;
   font-family: 'Josefin Sans';
   font-size: 14px;
   font-weight: 400;
-
 }
 
 .price-info {
@@ -302,42 +295,40 @@ a:-webkit-any-link {
   line-height: 29px;
   text-align: left;
   color: #a9acc6;
-
 }
 
 .add-to-cart-btn {
   font-family: 'Josefin Sans';
   font-size: 16px;
-  font-weight:400;
+  font-weight: 400;
   color: white;
-  background-color: #FB2E86;
+  background-color: #fb2e86;
   width: 134px;
   height: 39px;
   border: none;
-  border-radius:2px;
+  border-radius: 2px;
   cursor: pointer;
   text-align: center;
-  line-height:16px;
+  line-height: 16px;
   margin-top: 31px;
- 
 }
-.product-categories{
+.product-categories {
   font-family: 'Josefin Sans';
   font-size: 16px;
   font-weight: 600;
   line-height: 29px;
   text-align: left;
   color: #151875;
-  margin-top:10px;
+  margin-top: 10px;
 }
-.product-tags{
+.product-tags {
   font-family: 'Josefin Sans';
   font-size: 16px;
   font-weight: 600;
   line-height: 29px;
   text-align: left;
   color: #151875;
-  margin-top:10px;
+  margin-top: 10px;
 }
 .share-section {
   display: flex;
@@ -355,7 +346,7 @@ a:-webkit-any-link {
 
 .share-icons {
   display: flex;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .share-icon {
@@ -366,18 +357,18 @@ a:-webkit-any-link {
   object-fit: cover;
 }
 .wrapper {
-  max-width: 1920px;  
-  height: 600px;      
-  margin: 0 auto;     
-  background-color: #f9f8fe;  
+  max-width: 1920px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #f9f8fe;
   margin-top: 131px;
 }
 
 .container {
-  max-width: 1170px; 
+  max-width: 1170px;
   margin: 0 auto;
-  padding-top:107px;
-  background-color:#f8f9fe; 
+  padding-top: 107px;
+  background-color: #f8f9fe;
 }
 
 .tabs {
@@ -387,12 +378,11 @@ a:-webkit-any-link {
   font-family: 'Josefin Sans';
   font-size: 24px;
   font-weight: 600;
-  line-height: 24px; 
+  line-height: 24px;
 }
 
 .tabs li {
   display: inline;
-
 }
 
 .tabs a {
@@ -412,7 +402,6 @@ a:-webkit-any-link {
   line-height: 22px;
   color: #151875;
   margin-top: 61px;
-
 }
 
 .content p {
@@ -428,14 +417,13 @@ a:-webkit-any-link {
   padding-left: 0;
   margin-top: 10px;
 }
-h3{
+h3 {
   font-family: Josefin Sans;
   font-size: 22px;
   font-weight: 600;
   line-height: 22px;
   margin-top: 36px;
   color: #151875;
-
 }
 
 .details li {
@@ -452,22 +440,14 @@ h3{
 }
 
 //list
-p {
+h1 {
   font-family: 'Josefin Sans';
-font-size: 36px;
-font-weight: 700;
-line-height: 36px;
-text-align: center;
-margin-top:20px;
-
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 20px;
 }
-
-#product-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
 .product {
   text-align: center;
   margin: 20px;
@@ -484,31 +464,9 @@ margin-top:20px;
   border-radius: 10px;
 }
 
-.product h2 {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-.product p {
-  font-size: 1em;
-  color: #555;
-}
-
-.product .price {
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #333;
-}
-
-.product .stars {
-  color: gold;
-  margin: 5px 0;
-}
-//list
 #container-trending {
   display: flex;
   gap: 29px;
-  // padding: 20px;
   max-width: 1168px;
   width: 100%;
   margin: 0 auto;
@@ -516,16 +474,14 @@ margin-top:20px;
 }
 
 .trending-product-card {
-  position: relative;
   padding: 10px;
   width: 270px;
   height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  position: relative;
 }
 
 .trending-product-image-container {
@@ -536,7 +492,6 @@ margin-top:20px;
   justify-content: center;
   align-items: center;
   background-color: #f5f6f8;
-  position: relative;
 }
 
 .trending-product-image {
@@ -544,18 +499,24 @@ margin-top:20px;
   height: 171px;
 }
 
+.trending-product-title-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .trending-product-title {
   font-family: 'Lato';
   font-size: 16px;
   font-weight: 700;
-  text-align: center;
   color: #151875;
 }
 
-.trending-product-price-discount {
-  display: flex;
-  justify-content: center;
-  margin: 5px 0;
+.trending-product-rating .trending-product-stars {
+  color: gold;
+  font-size: 14px;
 }
 
 .trending-product-price {
@@ -565,18 +526,9 @@ margin-top:20px;
   line-height: 14px;
   text-align: center;
   color: #151875;
+  margin-top: 5px;
 }
 
-.trending-product-discount {
-  font-family: 'Josefin Sans';
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  text-align: center;
-  color: #1518754d;
-  text-decoration: line-through;
-  margin-left: 10px;
-}
 .five-img {
   max-width: 904px;
   height: 93px;
@@ -703,8 +655,3 @@ margin-top:20px;
   cursor: default;
   font-family: 'Lato';
 }
-
-
-
- 
-
