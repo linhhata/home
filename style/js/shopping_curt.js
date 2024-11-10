@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>
                     <div class="product-details">
                         <div style="position: relative; display: inline-block;">
-                            <img src="${product.thumbnail}" alt="${product.title}" style="width: 83px; height: 87px; border-radius: 3px; margin-right: 10px;">
+                            <img src="${product.thumbnail}" alt="${product.title}" style="width: 83px; height: 87px; border-radius: 3px;">
                             <button class="remove-button" data-id="${product.id}">×</button>
                         </div>
                         <div>
                             <p style="margin: 0; font-weight:bold;font-size: 14px;font-family:'Josefin Sans'; ">${product.title}</p>
-                            <p style="margin: 0; color:#a1a8c1; font-size: 14px;">Color: ${product.color || 'Brown'}</p>
-                            <p style="margin: 0; color: #a1a8c1; font-size: 14px;">Size: ${product.size || 'XL'}</p>
+                            <p style="margin: 0; color:#a1a8c1; font-size: 14px;font-family:'Josefin Sans';">Color: ${product.color || 'Brown'}</p>
+                            <p style="margin: 0; color: #a1a8c1; font-size: 14px;font-family:'Josefin Sans';">Size: ${product.size || 'XL'}</p>
                         </div>
                     </div>
                 </td>
