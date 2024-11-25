@@ -160,6 +160,7 @@
   position: absolute;
   top: 60px;
   left: 5px;
+  cursor: pointer;
 }
 
 .search-icon {
@@ -292,6 +293,10 @@
   height: 30px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.thumbnail-image1 {
+  cursor: pointer;
 }
 
 .thumbnail-image2 {
@@ -712,10 +717,12 @@
 .product-item:hover .view-shop {
   display: flex;
   opacity: 1;
+  cursor: pointer;
 }
 
 .product-item:hover .product-img::after {
   display: block;
+  cursor: pointer;
 }
 
 h4 {

@@ -3,17 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtotalElement = document.getElementById('subtotal');
     const totalElement = document.getElementById('total');
     const clearCartButton = document.getElementById('clear-cart');
+    const cartAlert = document.getElementById('cart-alert');
+    const closeAlertButton = document.getElementById('close-alert');
 
     function getCartItems() {
         return JSON.parse(localStorage.getItem('cart')) || [];
     }
-    
+
     function saveCartItems(cartItems) {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
+
     function displayCartItems() {
         const cartItems = getCartItems();
         cartItemsContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; font-weight: bold; font-size: 16px; color: #555;">
+                        Giỏ hàng đang trống
+                    </td>
+                </tr>`;
+            subtotalElement.textContent = '$0.00';
+            totalElement.textContent = '$0.00';
+            return;
+        }
 
         let subtotal = 0;
 
@@ -31,9 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="remove-button" data-id="${product.id}">×</button>
                         </div>
                         <div>
-                            <p style="margin: 0; font-weight:bold;font-size: 14px;font-family:'Josefin Sans'; ">${product.title}</p>
-                            <p style="margin: 0; color:#a1a8c1; font-size: 14px;font-family:'Josefin Sans';">Color: ${product.color || 'Brown'}</p>
-                            <p style="margin: 0; color: #a1a8c1; font-size: 14px;font-family:'Josefin Sans';">Size: ${product.size || 'XL'}</p>
+                            <p style="margin: 0; font-weight: bold; font-size: 14px; font-family: 'Josefin Sans';">
+                                ${product.title}
+                            </p>
+                            <p style="margin: 0; color: #a1a8c1; font-size: 14px; font-family: 'Josefin Sans';">
+                                Color: ${product.color || 'Brown'}
+                            </p>
+                            <p style="margin: 0; color: #a1a8c1; font-size: 14px; font-family: 'Josefin Sans';">
+                                Size: ${product.size || 'XL'}
+                            </p>
                         </div>
                     </div>
                 </td>
@@ -41,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>
                     <div class="quantity-control">
                         <button class="quantity-button" data-id="${product.id}" data-action="decrement">−</button>
-                        <input type="number" value="${product.quantity}" min="1" class="quantity-input" data-id="${product.id}" style="width: 50px; text-align: center;">
+                        <input type="number" value="${product.quantity}" min="1" class="quantity-input" data-id="${product.id}" style="width: 51px; text-align: center;">
                         <button class="quantity-button" data-id="${product.id}" data-action="increment">+</button>
                     </div>
                 </td>
@@ -59,6 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItems = cartItems.filter(item => item.id !== productId);
         saveCartItems(cartItems);
         displayCartItems();
+    }
+
+    function showCartAlert() {
+        cartAlert.classList.remove('hidden');
+    }
+
+    function hideCartAlert() {
+        cartAlert.classList.add('hidden');
     }
 
     cartItemsContainer.addEventListener('click', (e) => {
@@ -79,10 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayCartItems();
             }
         }
+
         if (e.target.classList.contains('remove-button')) {
             removeCartItem(productId);
         }
     });
+
     cartItemsContainer.addEventListener('input', (e) => {
         if (e.target.classList.contains('quantity-input')) {
             const productId = parseInt(e.target.dataset.id);
@@ -97,9 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
     clearCartButton.addEventListener('click', () => {
         localStorage.removeItem('cart');
         displayCartItems();
+        showCartAlert();
     });
+
+    closeAlertButton.addEventListener('click', () => {
+        hideCartAlert();
+    });
+
     displayCartItems();
 });

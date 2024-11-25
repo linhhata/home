@@ -29,41 +29,122 @@ fetch('https://dummyjson.com/products/categories')
     }
   })
   .catch(error => console.error('Error:', error));
-function showProducts(categorySlug) {
-  fetch(`https://dummyjson.com/products/category/${categorySlug}`)
-    .then(response => response.json())
-    .then(data => {
-      const productsContainer = document.getElementById('products');
-      productsContainer.innerHTML = '';
-      const limitedProducts = data.products.slice(0, 6);
-      limitedProducts.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('product');
-        productElement.innerHTML = `
-          <div class="image-container">
-              <img src="${product.thumbnail}" alt="${product.title}" />
-          <div class="icon-container">
-              <img class="sale-icon" src="./assest/sale.png" alt="Sale" />
-              <img class="cart-icon" src="./assest/hang.png" alt="Cart" />
-              <img class="heart-icon" src="./assest/love.png" alt="Heart" />
-              <img class="search-icon" src="./assest/plus.png" alt="Search" />
+  function showProducts(categorySlug) {
+    fetch(`https://dummyjson.com/products/category/${categorySlug}`)
+      .then(response => response.json())
+      .then(data => {
+        const productsContainer = document.getElementById('products');
+        productsContainer.innerHTML = '';
+        const limitedProducts = data.products.slice(0, 6);
+  
+        limitedProducts.forEach(product => {
+          const productElement = document.createElement('div');
+          productElement.classList.add('product');
+          productElement.innerHTML = `
+            <div class="image-container">
+                <img src="${product.thumbnail}" alt="${product.title}" />
+            <div class="icon-container">
+                <img class="sale-icon" src="./assest/sale.png" alt="Sale" />
+                <img class="cart-icon" src="./assest/hang.png" alt="Cart" data-id="${product.id}" />
+                <img class="heart-icon" src="./assest/love.png" alt="Heart" />
+                <img class="search-icon" src="./assest/plus.png" alt="Search" />
+            </div>
           </div>
-        </div>
-          <h2>${product.title}</h2>
-          <div class="price-container">
-            <p class="discount-price">$${product.discountPercentage}</p>
-            <p class="original-price">$${product.price}</p>
-        </div>
-        `;
+            <h2>${product.title}</h2>
+            <div class="price-container">
+              <p class="discount-price">$${product.discountPercentage}</p>
+              <p class="original-price">$${product.price}</p>
+          </div>
+          `;
+  
+          productsContainer.appendChild(productElement);
+  
+         
+          const cartIcon = productElement.querySelector('.cart-icon');
+          cartIcon.addEventListener('click', () => {
+            addToCart(product);
+            alert(`${product.title} đã được thêm vào giỏ hàng!`);
+          });
+        });
+      })
+      .catch(error => console.error('Error loading products:', error));
+  }
+  
 
-        productsContainer.appendChild(productElement);
-      });
-    })
-    .catch(error => console.error('Error loading products:', error));
-}
+  function getCartItems() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+  }
+  
+  
+  function saveCartItems(cartItems) {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }
+  
+  
+  function addToCart(product) {
+    const cartItems = getCartItems();
+    const existingProduct = cartItems.find(item => item.id === product.id);
+  
+    if (existingProduct) {
+      existingProduct.quantity += 1; 
+    } else {
+      
+      const productToAdd = {
+        id: product.id,
+        title: product.title,
+        thumbnail: product.thumbnail,
+        price: product.price,
+        quantity: 1
+      };
+      cartItems.push(productToAdd);
+    }
+  
+    saveCartItems(cartItems); 
+    displayCartItems(); 
+  }
+  
+  // Hàm để hiển thị sản phẩm trong giỏ hàng
+  function displayCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const subtotalElement = document.getElementById('subtotal');
+    const totalElement = document.getElementById('total');
+    const cartItems = getCartItems();
+  
+    cartItemsContainer.innerHTML = '';
+    let subtotal = 0;
+  
+    cartItems.forEach(product => {
+      const totalProductPrice = product.price * product.quantity;
+      subtotal += totalProductPrice;
+  
+      const cartItem = document.createElement('tr');
+      cartItem.classList.add('cart-item');
+      cartItem.innerHTML = `
+        <td>
+          <div class="product-details">
+            <img src="${product.thumbnail}" alt="${product.title}" style="width: 83px; height: 87px; border-radius: 3px;">
+            <div>
+              <p style="margin: 0; font-weight: bold;">${product.title}</p>
+              <p style="margin: 0; color: #a1a8c1;">Size: XL</p>
+            </div>
+          </div>
+        </td>
+        <td>$${product.price.toFixed(2)}</td>
+        <td>${product.quantity}</td>
+        <td>$${totalProductPrice.toFixed(2)}</td>
+      `;
+      cartItemsContainer.appendChild(cartItem);
+    });
+  
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    totalElement.textContent = `$${subtotal.toFixed(2)}`;
+  }
+  
+  
+  document.addEventListener('DOMContentLoaded', displayCartItems);
+  
 
 //Trending Products
-
 const fetchTrendingProducts = async () => {
   try {
       const response = await fetch('https://dummyjson.com/products');
@@ -79,16 +160,16 @@ const fetchTrendingProducts = async () => {
               <div class="trending-product-image-container">
                   <img src="${item.thumbnail}" alt="${item.title}" class="trending-product-image">
                   <div class="thumbnail-images" style="display: none;">
-                      <img src="./assest/hang.png"class="thumbnail-image1">
+                      <img src="./assest/hang.png" class="thumbnail-image1">
                       <img src="./assest/love.png" class="thumbnail-image2">
                       <img src="./assest/plus.png" class="thumbnail-image3">
                   </div>
-                  <button class="view-now-button" style="display: none;">View Deails</button>
+                  <button class="view-now-button" style="display: none;">View Details</button>
               </div>
               <h3 class="trending-product-title">${item.title}</h3>
               <div class="trending-product-price-discount">
                   <p class="trending-product-price">$${item.price}</p> 
-                  <p class="trending-product-discount">$${item.discountPercentage}</p> 
+                  <p class="trending-product-discount">${item.discountPercentage}</p> 
               </div>
           `;
 
@@ -107,6 +188,13 @@ const fetchTrendingProducts = async () => {
               viewNowButton.style.display = 'none'; 
           });
 
+         
+          const viewNowButton = trendingProductCard.querySelector('.view-now-button');
+          viewNowButton.addEventListener('click', () => {
+             
+              window.location.href = `details.html?id=${item.id}`;
+          });
+
           trendingProductContainer.appendChild(trendingProductCard);
       });
   } catch (error) {
@@ -118,8 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchTrendingProducts(); 
 });
 
+
 //Discount Item
-// Hàm để viết hoa chữ cái đầu
+
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -206,22 +295,31 @@ fetch('https://dummyjson.com/products')
     })
     .catch(error => console.error('Lỗi API:', error));
 
-function displayProducts(products) {
-    const productContainer = document.getElementById('product-list');
-    products.forEach(product => {
-        const productHTML = `
-        <div class="product-item">
-            <div class="product-img">
-                <img src="${product.thumbnail}" alt="${product.title}" />
-                <div class="view-shop">View Shop</div>
-            </div>
-            <h4>${product.title}</h4>
-            <p>$${product.price.toFixed(2)}</p>
-        </div>
-        `;
-        productContainer.innerHTML += productHTML;
-    });
-}
+    function displayProducts(products) {
+      const productContainer = document.getElementById('product-list');
+      productContainer.innerHTML = ''; 
+      products.forEach(product => {
+          const productHTML = `
+          <div class="product-item">
+              <div class="product-img">
+                  <img src="${product.thumbnail}" alt="${product.title}" />
+                  <div class="view-shop" onclick="viewProductDetails(${product.id})">View Shop</div>
+              </div>
+              <h4>${product.title}</h4>
+              <p>$${product.price.toFixed(2)}</p>
+          </div>
+          `;
+          productContainer.innerHTML += productHTML;
+      });
+  }
+  
+  function viewProductDetails(productId) {
+   
+      window.location.href = `details.html?id=${productId}`;
+  }
+  
+
+  
 
 
 

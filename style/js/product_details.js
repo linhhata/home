@@ -1,12 +1,11 @@
 
 //APi 2
+// URL API
 const apiGetSingleProduct = "https://dummyjson.com/products";
-const apiGetProductsByACategory = "https://dummyjson.com/products/category";
 
 async function getProductData() {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("id");
-
     const response = await fetch(`${apiGetSingleProduct}/${productId}`);
     const data = await response.json();
     return data;
@@ -21,7 +20,6 @@ function showProductInfo(data) {
     document.querySelector(".product-categories-name").textContent = data.category.charAt(0).toUpperCase() + data.category.slice(1);
     document.querySelector(".product-tags-name").textContent = data.tags ? data.tags.join(', ') : 'N/A';
 
-    
     const ratingContainer = document.createElement('div');
     ratingContainer.classList.add('product-rating-container');
     ratingContainer.innerHTML = `
@@ -29,11 +27,9 @@ function showProductInfo(data) {
         <span class="num-of-review">(${data.reviews.length})</span>
     `;
     
-    
     document.querySelector(".product-rating").innerHTML = ''; 
     document.querySelector(".product-rating").appendChild(ratingContainer);
 
-   
     showProductImage(data.images);
 }
 
@@ -63,6 +59,7 @@ function showProductImage(listImages) {
         });
     }
 }
+
 function showRating(rating) {
     let stars = '';
     for (let i = 0; i < 5; i++) {
@@ -70,62 +67,44 @@ function showRating(rating) {
     }
     return stars;
 }
-async function showRelatedProducts(data) {
-    try {
-        const response = await fetch(`${apiGetProductsByACategory}/${data.category}?skip=0&limit=4`);
-        if (!response.ok) throw new Error("Lỗi khi tải sản phẩm liên quan");
 
-        const resData = await response.json();
-        const relatedProductsContainer = document.getElementById("related-products");
+function addCart(product) {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-        resData.products.forEach(element => {
-            const relatedProductItem = document.createElement("div");
-            relatedProductItem.classList.add("flex-column", "related-product-item");
-
-            relatedProductItem.innerHTML = `
-                <img class="related-product-item-thumb" src="${element.thumbnail}">
-                <div class="flex justify-between align-baseline">
-                    <span class="josefin-sans-semi-bold text-ellipsis related-product-item-name">${element.title}</span>
-                    <div class="product-rating">
-                        ${showRating(element.rating)}
-                    </div>
-                </div>
-                <span class="josefin-sans related-product-item-price">$${element.price.toLocaleString("en-US")}</span>
-            `;
-
-            relatedProductsContainer.appendChild(relatedProductItem);
-
-            relatedProductItem.addEventListener("click", function () {
-                window.location.href = `pages/details.html?id=${element.id}`;
-            });
-        });
-    } catch (error) {
-        console.error("Lỗi khi tải sản phẩm liên quan:", error);
+    const existingProduct = cartItems.find(item => item.id === product.id);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cartItems.push({ ...product, quantity: 1 });
     }
+    
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    console.log("Product added to cart:", product);
 }
+
 async function showProductDetailsPage() {
     const data = await getProductData();
     if (data) {
         showProductInfo(data);
-        showRelatedProducts(data);
-
+        
         const addCartButton = document.getElementById("add-cart-btn");
         addCartButton.addEventListener("click", function (event) {
             event.stopPropagation();
             addCart(data);
-            console.log("add cart success:", data);
+            console.log("Add to cart success:", data);
         });
     }
 }
+
+
 document.addEventListener('DOMContentLoaded', showProductDetailsPage);
+
 
 //Related Products
 const fetchTrendingProducts = async () => {
     try {
         const response = await fetch('https://dummyjson.com/products/category/Smartphones');
         const data = await response.json();
-
-        // Lấy 4 sản phẩm đầu tiên từ danh mục "Mens-shoes"
         const products = data.products.slice(0, 4);
         const trendingProductContainer = document.getElementById('container-trending');
         trendingProductContainer.innerHTML = '';

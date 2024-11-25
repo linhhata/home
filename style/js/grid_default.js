@@ -1,3 +1,4 @@
+
 const apiUrl = 'https://dummyjson.com/products?limit=194';
 const productsPerPage = 48; 
 let currentPage = 1; 
@@ -142,6 +143,14 @@ function displayProducts(products, page) {
                 smallImage.alt = `Small Image ${index + 1}`; 
                 smallImage.classList.add(`small-img${index + 1}`); 
 
+                
+                smallImage.addEventListener('click', () => {
+                   
+                    if (url === './assest/hang.png') {
+                        addToCart(product);  
+                    }
+                });
+
                 smallImagesContainer.appendChild(smallImage);
             });
 
@@ -152,6 +161,7 @@ function displayProducts(products, page) {
         productContainer.appendChild(productCard);
     });
 }
+
 function createPagination(totalPages) {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = ''; 
@@ -198,4 +208,28 @@ listViewButton.addEventListener('click', () => {
     document.getElementById('product-list').classList.add('product-list');
     displayProducts(allProducts, currentPage); 
 });
+
+
+function addToCart(product) {
+    
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex === -1) {
+       
+        product.quantity = 1; 
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product.title} đã được thêm vào giỏ hàng!`);
+    } else {
+        alert(`${product.title} đã có trong giỏ hàng.`);
+    }
+
+ 
+    updateCartTotal();
+}
+
 window.onload = fetchAllProducts;
+
